@@ -20,7 +20,7 @@ import kotlin.math.sqrt
 class MainActivity : ComponentActivity() {
     private lateinit var sensorManager: SensorManager
 
-    // Estados Compose para los valores del magnetómetro
+
     private var magX by mutableStateOf(0f)
     private var magY by mutableStateOf(0f)
     private var magZ by mutableStateOf(0f)
@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Top
                     ) {
                         Text(
-                            text = "🔋 Magnetómetro",
+                            text = " Magnetómetro",
                             style = MaterialTheme.typography.headlineMedium
                         )
 
@@ -87,7 +87,7 @@ class MainActivity : ComponentActivity() {
 
                         Spacer(modifier = Modifier.height(16.dp))
 
-                        // 2) Mostrar la intensidad total |B| = sqrt(X²+Y²+Z²)
+                        // 2) Mostrar la intensidad total
                         val intensity = sqrt(magX * magX + magY * magY + magZ * magZ)
                         Text(
                             text = "Intensidad: ${"%.1f".format(intensity)} μT",
